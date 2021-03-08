@@ -76,7 +76,6 @@ class _RPUIChoiceQuestionBodyState extends State<RPUIChoiceQuestionBody>
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Image.asset('assets/images/owl-3.jpg'),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(widget._answerFormat.answerStyle == ChoiceAnswerStyle.MultipleChoice
