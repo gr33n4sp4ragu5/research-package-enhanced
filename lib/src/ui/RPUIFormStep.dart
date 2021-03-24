@@ -64,13 +64,14 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
           checkReadyToProceed();
         });
       case RPChoiceAnswerFormat:
-        return RPUIChoiceQuestionBody(answerFormat, (result) {
+        RPUIChoiceQuestionBody body = RPUIChoiceQuestionBody(answerFormat, (result) {
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
           tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
         });
+        return RPUIChoiceQuestionBodyWithImage(body, 'assets/images/owl-3.jpg');
       case RPSliderAnswerFormat:
         return RPUISliderQuestionBody(answerFormat, (result) {
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;

@@ -53,9 +53,10 @@ class _RPUIQuestionStepState extends State<RPUIQuestionStep> with CanSaveResult 
           this.currentQuestionBodyResult = result;
         });
       case RPChoiceAnswerFormat:
-        return RPUIChoiceQuestionBody(answerFormat, (result) {
+          RPUIChoiceQuestionBody body = new RPUIChoiceQuestionBody(answerFormat, (result) {
           this.currentQuestionBodyResult = result;
         });
+        return RPUIChoiceQuestionBodyWithImage(body, 'assets/images/owl-3.jpg');
       case RPSliderAnswerFormat:
         return RPUISliderQuestionBody(answerFormat, (result) {
           this.currentQuestionBodyResult = result;
