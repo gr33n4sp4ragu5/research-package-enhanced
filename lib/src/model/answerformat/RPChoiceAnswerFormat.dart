@@ -5,11 +5,12 @@ part of research_package_model;
 class RPChoiceAnswerFormat extends RPAnswerFormat {
   List<RPChoice> _choices;
   ChoiceAnswerStyle answerStyle;
+  String asset_path;
 
   RPChoiceAnswerFormat();
 
   /// Returns an initialized choice answer format with the given [ChoiceAnswerStyle] and the set of [RPChoice]s.
-  RPChoiceAnswerFormat.withParams(this.answerStyle, this._choices) {
+  RPChoiceAnswerFormat.withParams(this.answerStyle, this._choices, this.asset_path) {
     questionType = answerStyle == ChoiceAnswerStyle.SingleChoice
         ? QuestionType.SingleChoice
         : QuestionType.MultipleChoice;

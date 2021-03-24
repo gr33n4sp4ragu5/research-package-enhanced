@@ -66,18 +66,18 @@ RPBooleanAnswerFormat yesNoAnswerFormat = RPBooleanAnswerFormat.withParams("Yes"
 RPImageChoiceAnswerFormat imageChoiceAnswerFormat = RPImageChoiceAnswerFormat.withParams(images);
 RPIntegerAnswerFormat nrOfCigarettesAnswerFormat = RPIntegerAnswerFormat.withParams(0, 200, "cigarettes");
 RPChoiceAnswerFormat who5AnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, who5Choices);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, who5Choices, 'assets/images/owl-3.jpg');
 RPChoiceAnswerFormat joyfulActivitiesAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, joyfulActivities);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, joyfulActivities, 'assets/images/owl-3.jpg');
 RPChoiceAnswerFormat numbersAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, numbers);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, numbers, 'assets/images/owl-3.jpg');
 RPChoiceAnswerFormat alphabetAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, alphabet);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, alphabet, 'assets/images/owl-3.jpg');
 RPChoiceAnswerFormat instrumentsAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, instruments);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, instruments, 'assets/images/owl-3.jpg');
 RPIntegerAnswerFormat minutesIntegerAnswerFormat = RPIntegerAnswerFormat.withParams(0, 10000, "minutes");
 RPChoiceAnswerFormat guitarAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, guitarReasons);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, guitarReasons, 'assets/images/owl-3.jpg');
 
 ///
 /// STEPS
@@ -277,7 +277,7 @@ List<RPChoice> likertProblemScaleAnswers = [
   RPChoice.withParams("Serious problem", 4),
 ];
 RPChoiceAnswerFormat likertProblemScaleAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, likertProblemScaleAnswers);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, likertProblemScaleAnswers, 'assets/images/owl-3.jpg');
 
 // PAID
 // B2 SHORT (Long has been archived if later necessary)

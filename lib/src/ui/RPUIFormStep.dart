@@ -71,7 +71,7 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
 
           checkReadyToProceed();
         });
-        return RPUIChoiceQuestionBodyWithImage(body, 'assets/images/owl-3.jpg');
+        return RPUIChoiceQuestionBodyWithImage(body, body._answerFormat.asset_path);
       case RPSliderAnswerFormat:
         return RPUISliderQuestionBody(answerFormat, (result) {
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;

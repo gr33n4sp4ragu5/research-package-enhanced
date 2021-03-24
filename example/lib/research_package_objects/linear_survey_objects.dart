@@ -35,7 +35,7 @@ List<RPImageChoice> images = [
 ];
 
 RPChoiceAnswerFormat timeAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, timeChoices);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, timeChoices, 'assets/images/owl-3.jpg');
 // All types of DateTime answer formats
 RPDateTimeAnswerFormat timeOfDayAnswerFormat =
     RPDateTimeAnswerFormat.withParams(DateTimeAnswerStyle.TimeOfDay);
@@ -48,10 +48,10 @@ RPSliderAnswerFormat sliderAnswerFormat =
     RPSliderAnswerFormat.withParams(0, 100, divisions: 10, prefix: "\$", suffix: " paid");
 
 RPChoiceAnswerFormat joyfulActivitiesAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, joyfulActivities);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, joyfulActivities, 'assets/images/waving-hand.png');
 
 RPChoiceAnswerFormat instrumentsAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, instruments);
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, instruments, 'assets/images/owl-3.jpg');
 
 RPIntegerAnswerFormat weightIntegerAnswerFormat = RPIntegerAnswerFormat.withParams(0, 200, "KG");
 
