@@ -134,14 +134,6 @@ RPInstructionStep instructionStep = RPInstructionStep(
 RPOrderedTask linearSurveyTask = RPOrderedTask(
   "surveyTaskID",
   [
-    instructionStep,
-    formStep,
-    smokingQuestionStep,
-    sliderQuestionStep,
-    timeOfDayQuestionStep,
-    dateAndTimeQuestionStep,
-    dateQuestionStep,
-    imageChoiceQuestionStep,
     singleChoiceQuestionStep,
     happinessChoiceQuestionStep,
     weightQuestionStep,
