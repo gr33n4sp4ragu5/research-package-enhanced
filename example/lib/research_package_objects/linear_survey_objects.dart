@@ -1,31 +1,31 @@
 import 'package:research_package/model.dart';
 
 List<RPChoice> feelingsChoices0 = [
-  RPChoice.withParams("Jelous", 3),
-  RPChoice.withParams("Panicked", 2),
-  RPChoice.withParams("Arrogant", 1),
-  RPChoice.withParams("Hateful", 0),
+  RPChoice.withParams("Envidioso", 3),
+  RPChoice.withParams("Aterrado", 2),
+  RPChoice.withParams("Arrogante", 1),
+  RPChoice.withParams("Odioso", 0),
 ];
 
 List<RPChoice> feelingsChoices1 = [
-  RPChoice.withParams("Playful", 3),
-  RPChoice.withParams("Comforting", 2),
-  RPChoice.withParams("Irritated", 1),
-  RPChoice.withParams("Bored", 0),
+  RPChoice.withParams("Traviesa", 3),
+  RPChoice.withParams("Confortante", 2),
+  RPChoice.withParams("Irritada", 1),
+  RPChoice.withParams("Aburrida", 0),
 ];
 
 List<RPChoice> feelingsChoices2 = [
-  RPChoice.withParams("Terrified", 3),
-  RPChoice.withParams("Upset", 2),
-  RPChoice.withParams("Arrogant", 1),
-  RPChoice.withParams("Annoyed", 0),
+  RPChoice.withParams("Aterrada", 3),
+  RPChoice.withParams("Triste", 2),
+  RPChoice.withParams("Arrogante", 1),
+  RPChoice.withParams("Molesto", 0),
 ];
 
 List<RPChoice> feelingsChoices3 = [
-  RPChoice.withParams("Joking", 3),
-  RPChoice.withParams("Flustered", 2),
-  RPChoice.withParams("Desire", 1),
-  RPChoice.withParams("Convinced", 0),
+  RPChoice.withParams("Bromista", 3),
+  RPChoice.withParams("Aturdido", 2),
+  RPChoice.withParams("Deseoso", 1),
+  RPChoice.withParams("Convencido", 0),
 ];
 
 
@@ -39,23 +39,23 @@ RPChoiceAnswerFormat feelingsAnswerFormat3 =
 RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices3, 'assets/images/readmindeyes/3.png');
 
 RPQuestionStep stepEmotions0 = RPQuestionStep.withAnswerFormat(
-  "questionStep1ID",
-  "What emotion better describes this face?",
+  "questionStep0ID",
+  "¿Qué palabra define mejor esta expresión?",
   feelingsAnswerFormat0,
 );
 RPQuestionStep stepEmotions1 = RPQuestionStep.withAnswerFormat(
   "questionStep1ID",
-  "What emotion better describes this face?",
+  "¿Qué palabra define mejor esta expresión?",
   feelingsAnswerFormat1,
 );
 RPQuestionStep stepEmotions2 = RPQuestionStep.withAnswerFormat(
-  "questionStep1ID",
-  "What emotion better describes this face?",
+  "questionStep2ID",
+  "¿Qué palabra define mejor esta expresión?",
   feelingsAnswerFormat2,
 );
 RPQuestionStep stepEmotions3 = RPQuestionStep.withAnswerFormat(
-  "questionStep1ID",
-  "What emotion better describes this face?",
+  "questionStep3ID",
+  "¿Qué palabra define mejor esta expresión?",
   feelingsAnswerFormat3,
 );
 
