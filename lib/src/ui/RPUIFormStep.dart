@@ -64,6 +64,17 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
           checkReadyToProceed();
         });
       case RPChoiceAnswerFormat:
+        print("On normal RPChoice answer format");
+        RPUIChoiceQuestionBody body = RPUIChoiceQuestionBody(answerFormat, (result) {
+          RPStepResult tempResult = stepResult.results[id] as RPStepResult;
+          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.setResult(result);
+
+          checkReadyToProceed();
+        });
+        return RPUIChoiceQuestionBodyWithImage(body, body._answerFormat.asset_path);
+      case AlbertoAnswerFormat:
+        print("On Alberto Answer Format");
         RPUIChoiceQuestionBody body = RPUIChoiceQuestionBody(answerFormat, (result) {
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
           tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;

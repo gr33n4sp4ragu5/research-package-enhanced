@@ -1,63 +1,64 @@
-import 'package:flutter/widgets.dart';
 import 'package:research_package/model.dart';
 
-List<RPChoice> timeChoices = [
-  RPChoice.withParams("All of the time", 5),
-  RPChoice.withParams("Most of the time", 4),
-  RPChoice.withParams("More than half of the time", 3),
-  RPChoice.withParams("Less than half of the time", 2),
-  RPChoice.withParams("Some of the time", 1),
-  RPChoice.withParams("At no time", 0),
+List<RPChoice> feelingsChoices0 = [
+  RPChoice.withParams("Jelous", 3),
+  RPChoice.withParams("Panicked", 2),
+  RPChoice.withParams("Arrogant", 1),
+  RPChoice.withParams("Hateful", 0),
 ];
 
-List<AlbertoChoice> timeChoicesAlberto = [
-  AlbertoChoice.withParams("All of the time", 5),
-  AlbertoChoice.withParams("Most of the time", 4),
-  AlbertoChoice.withParams("More than half of the time", 3),
-  AlbertoChoice.withParams("Less than half of the time", 2),
-  AlbertoChoice.withParams("Some of the time", 1),
-  AlbertoChoice.withParams("At no time", 0),
+List<RPChoice> feelingsChoices1 = [
+  RPChoice.withParams("Playful", 3),
+  RPChoice.withParams("Comforting", 2),
+  RPChoice.withParams("Irritated", 1),
+  RPChoice.withParams("Bored", 0),
 ];
 
-List<AlbertoChoice> joyfulActivities = [
-  AlbertoChoice.withParams("Playing games", 6, true),
-  AlbertoChoice.withParams("Jogging", 5),
-  AlbertoChoice.withParams("Playing an instrument", 4),
-  AlbertoChoice.withParams("Family and friends", 3),
-  AlbertoChoice.withParams("Doing sports", 2),
-  AlbertoChoice.withParams("Reading", 1),
-  AlbertoChoice.withParams("Being productive", 0),
+List<RPChoice> feelingsChoices2 = [
+  RPChoice.withParams("Terrified", 3),
+  RPChoice.withParams("Upset", 2),
+  RPChoice.withParams("Arrogant", 1),
+  RPChoice.withParams("Annoyed", 0),
 ];
 
-RPChoiceAnswerFormat timeAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, timeChoices, 'assets/images/owl-3.jpg');
-AlbertoAnswerFormat timeAnswerFormatAlberto =
-AlbertoAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, timeChoicesAlberto, 'assets/images/owl-3.jpg');
-// All types of DateTime answer formats
-RPDateTimeAnswerFormat timeOfDayAnswerFormat =
-    RPDateTimeAnswerFormat.withParams(DateTimeAnswerStyle.TimeOfDay);
-RPDateTimeAnswerFormat dateAndTimeAnswerFormat =
-    RPDateTimeAnswerFormat.withParams(DateTimeAnswerStyle.DateAndTime);
-RPDateTimeAnswerFormat dateAnswerFormat = RPDateTimeAnswerFormat.withParams(DateTimeAnswerStyle.Date);
-
-AlbertoAnswerFormat joyfulActivitiesAnswerFormat =
-    AlbertoAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, joyfulActivities, 'assets/images/waving-hand.png');
+List<RPChoice> feelingsChoices3 = [
+  RPChoice.withParams("Joking", 3),
+  RPChoice.withParams("Flustered", 2),
+  RPChoice.withParams("Desire", 1),
+  RPChoice.withParams("Convinced", 0),
+];
 
 
-RPQuestionStep singleChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
+RPChoiceAnswerFormat feelingsAnswerFormat0 =
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices0, 'assets/images/readmindeyes/0.png');
+RPChoiceAnswerFormat feelingsAnswerFormat1 =
+RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices1, 'assets/images/readmindeyes/1.png');
+RPChoiceAnswerFormat feelingsAnswerFormat2 =
+RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices2, 'assets/images/readmindeyes/2.png');
+RPChoiceAnswerFormat feelingsAnswerFormat3 =
+RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices3, 'assets/images/readmindeyes/3.png');
+
+RPQuestionStep stepEmotions0 = RPQuestionStep.withAnswerFormat(
   "questionStep1ID",
-  "I have felt cheerful and in good spirits",
-  timeAnswerFormat,
+  "What emotion better describes this face?",
+  feelingsAnswerFormat0,
+);
+RPQuestionStep stepEmotions1 = RPQuestionStep.withAnswerFormat(
+  "questionStep1ID",
+  "What emotion better describes this face?",
+  feelingsAnswerFormat1,
+);
+RPQuestionStep stepEmotions2 = RPQuestionStep.withAnswerFormat(
+  "questionStep1ID",
+  "What emotion better describes this face?",
+  feelingsAnswerFormat2,
+);
+RPQuestionStep stepEmotions3 = RPQuestionStep.withAnswerFormat(
+  "questionStep1ID",
+  "What emotion better describes this face?",
+  feelingsAnswerFormat3,
 );
 
-RPQuestionStep singleChoiceQuestionStepAlberto = RPQuestionStep.withAnswerFormat(
-  "questionStep1ID",
-  "I have felt cheerful and in good spirits",
-  timeAnswerFormatAlberto,
-);
-
-RPQuestionStep happinessChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
-    "happinessChoiceQuestionStepID", "What makes you happy?", joyfulActivitiesAnswerFormat);
 
 
 RPCompletionStep completionStep = RPCompletionStep("completionID")
@@ -72,9 +73,11 @@ RPInstructionStep instructionStep = RPInstructionStep(
 RPOrderedTask linearSurveyTask = RPOrderedTask(
   "surveyTaskID",
   [
-    singleChoiceQuestionStep,
-    singleChoiceQuestionStepAlberto,
-    happinessChoiceQuestionStep,
+    instructionStep,
+    stepEmotions0,
+    stepEmotions1,
+    stepEmotions2,
+    stepEmotions3,
     completionStep
   ],
 );

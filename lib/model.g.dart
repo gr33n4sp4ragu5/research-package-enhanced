@@ -142,6 +142,59 @@ Map<String, dynamic> _$RPChoiceToJson(RPChoice instance) {
   return val;
 }
 
+AlbertoAnswerFormat _$AlbertoAnswerFormatFromJson(Map<String, dynamic> json) {
+  return AlbertoAnswerFormat()
+    ..questionType =
+    _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
+    ..answerStyle =
+    _$enumDecodeNullable(_$ChoiceAnswerStyleEnumMap, json['answer_style'])
+    ..asset_path = json['asset_path'] as String
+    ..choices = (json['choices'] as List)
+        ?.map((e) => e == null
+        ? null
+        : AlbertoChoice.fromJson(e as Map<String, dynamic>))
+        ?.toList();
+}
+
+Map<String, dynamic> _$AlbertoAnswerFormatToJson(AlbertoAnswerFormat instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
+  writeNotNull(
+      'answer_style', _$ChoiceAnswerStyleEnumMap[instance.answerStyle]);
+  writeNotNull('asset_path', instance.asset_path);
+  writeNotNull('choices', instance.choices);
+  return val;
+}
+
+AlbertoChoice _$AlbertoChoiceFromJson(Map<String, dynamic> json) {
+  return AlbertoChoice()
+    ..text = json['text']
+    ..value = json['value']
+    ..detailText = json['detail_text'];
+}
+
+Map<String, dynamic> _$AlbertoChoiceToJson(AlbertoChoice instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('text', instance.text);
+  writeNotNull('value', instance.value);
+  writeNotNull('detail_text', instance.detailText);
+  return val;
+}
+
 RPFormAnswerFormat _$RPFormAnswerFormatFromJson(Map<String, dynamic> json) {
   return RPFormAnswerFormat();
 }
