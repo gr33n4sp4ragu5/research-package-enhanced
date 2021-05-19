@@ -8,6 +8,10 @@ class LinearSurveyPage extends StatelessWidget {
 
   void resultCallback(RPTaskResult result) {
     // Do anything with the result
+    String formattedResult = _encode(result);
+    print(formattedResult.substring(1018));
+    print(formattedResult.substring(1018*2));
+    print(formattedResult.substring(1018*3));
     print(_encode(result));
   }
 
