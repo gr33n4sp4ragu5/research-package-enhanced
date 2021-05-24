@@ -30,13 +30,13 @@ List<RPChoice> feelingsChoices3 = [
 
 
 RPChoiceAnswerFormat feelingsAnswerFormat0 =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices0, 'assets/images/readmindeyes/0.png');
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices0, asset_path: 'assets/images/readmindeyes/0.png');
 RPChoiceAnswerFormat feelingsAnswerFormat1 =
-RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices1, 'assets/images/readmindeyes/1.png');
+RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices1, asset_path: 'assets/images/readmindeyes/1.png');
 RPChoiceAnswerFormat feelingsAnswerFormat2 =
-RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices2, 'assets/images/readmindeyes/2.png');
+RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices2, asset_path: 'assets/images/readmindeyes/2.png');
 RPChoiceAnswerFormat feelingsAnswerFormat3 =
-RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices3, 'assets/images/readmindeyes/3.png');
+RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, feelingsChoices3, asset_path: 'assets/images/readmindeyes/3.png');
 
 RPQuestionStep stepEmotions0 = RPQuestionStep.withAnswerFormat(
   "questionStep0ID",

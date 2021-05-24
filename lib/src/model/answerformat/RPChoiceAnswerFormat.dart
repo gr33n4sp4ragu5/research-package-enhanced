@@ -10,7 +10,10 @@ class RPChoiceAnswerFormat extends RPAnswerFormat {
   RPChoiceAnswerFormat();
 
   /// Returns an initialized choice answer format with the given [ChoiceAnswerStyle] and the set of [RPChoice]s.
-  RPChoiceAnswerFormat.withParams(this.answerStyle, this._choices, this.asset_path) {
+  RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle answerStyle, List<RPChoice> _choices, {String asset_path}) {
+    this._choices = _choices;
+    this.answerStyle = answerStyle;
+    this.asset_path = asset_path;
     questionType = answerStyle == ChoiceAnswerStyle.SingleChoice
         ? QuestionType.SingleChoice
         : QuestionType.MultipleChoice;

@@ -72,7 +72,7 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
 
           checkReadyToProceed();
         });
-        return RPUIChoiceQuestionBodyWithImage(body, body._answerFormat.asset_path);
+        return RPUIChoiceQuestionBodyWithImage(body, asset_path: body._answerFormat.asset_path);
       case AlbertoAnswerFormat:
         print("On Alberto Answer Format");
         RPUIChoiceQuestionBody body = RPUIChoiceQuestionBody(answerFormat, (result) {
@@ -82,7 +82,7 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
 
           checkReadyToProceed();
         });
-        return RPUIChoiceQuestionBodyWithImage(body, body._answerFormat.asset_path);
+        return RPUIChoiceQuestionBodyWithImage(body, asset_path: body._answerFormat.asset_path);
       case RPSliderAnswerFormat:
         return RPUISliderQuestionBody(answerFormat, (result) {
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;

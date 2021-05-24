@@ -56,7 +56,7 @@ class _RPUIQuestionStepState extends State<RPUIQuestionStep> with CanSaveResult 
           RPUIChoiceQuestionBody body = new RPUIChoiceQuestionBody(answerFormat, (result) {
           this.currentQuestionBodyResult = result;
         });
-        return RPUIChoiceQuestionBodyWithImage(body, body._answerFormat.asset_path);
+        return RPUIChoiceQuestionBodyWithImage(body, asset_path: body._answerFormat.asset_path);
       case RPSliderAnswerFormat:
         return RPUISliderQuestionBody(answerFormat, (result) {
           this.currentQuestionBodyResult = result;

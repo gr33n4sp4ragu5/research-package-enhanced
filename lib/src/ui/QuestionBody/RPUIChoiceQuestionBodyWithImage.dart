@@ -4,7 +4,7 @@ import '../../../ui.dart';
 class RPUIChoiceQuestionBodyWithImage extends StatefulWidget {
   final RPUIChoiceQuestionBody questionBody;
   final String asset_path;
-  RPUIChoiceQuestionBodyWithImage(this.questionBody, this.asset_path);
+  RPUIChoiceQuestionBodyWithImage(this.questionBody, {this.asset_path});
   @override
   _RPUIChoiceQuestionBodyWithImageState createState() => _RPUIChoiceQuestionBodyWithImageState();
 }
@@ -16,9 +16,17 @@ class _RPUIChoiceQuestionBodyWithImageState extends State<RPUIChoiceQuestionBody
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Image.asset(widget.asset_path),
+        getImage(),
         widget.questionBody
       ],
     );
+  }
+
+  Widget getImage() {
+    if(widget.asset_path == null) {
+      return Text("");
+    } else {
+      return Image.asset(widget.asset_path);
+    }
   }
 }
