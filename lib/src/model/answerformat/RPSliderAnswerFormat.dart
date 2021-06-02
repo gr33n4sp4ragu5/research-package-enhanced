@@ -8,12 +8,14 @@ class RPSliderAnswerFormat extends RPAnswerFormat {
   int _divisions;
   String _prefix;
   String _suffix;
+  List<String> _options;
 
   RPSliderAnswerFormat();
 
   RPSliderAnswerFormat.withParams(this._minValue, this._maxValue,
-      {divisions, prefix, suffix})
+      {divisions, prefix, suffix, options})
       : this._divisions = divisions,
+        this._options = options ?? [],
         this._prefix = prefix ?? "",
         this._suffix = suffix ?? "";
 
@@ -37,6 +39,9 @@ class RPSliderAnswerFormat extends RPAnswerFormat {
   /// The suffix displayed after yhe value.
   String get suffix => _suffix;
 
+  /// The list of strings with the values to display instead of a number.
+  List<String> get options => _options;
+
   set maxValue(double maxValue) {
     this._maxValue = maxValue;
   }
@@ -55,6 +60,10 @@ class RPSliderAnswerFormat extends RPAnswerFormat {
 
   set suffix(String suffix) {
     this._suffix = suffix;
+  }
+
+  set options(List<String> options) {
+    this._options = options;
   }
 
   factory RPSliderAnswerFormat.fromJson(Map<String, dynamic> json) =>
