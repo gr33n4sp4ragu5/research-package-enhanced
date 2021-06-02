@@ -24,7 +24,7 @@ class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
       child: Column(
         children: <Widget>[
           Text(
-            '${locale?.translate(widget.answerFormat.prefix) ?? widget.answerFormat.prefix}${value ?? widget.answerFormat.minValue}${locale?.translate(widget.answerFormat.suffix) ?? widget.answerFormat.suffix}',
+            '${locale?.translate(widget.answerFormat.prefix) ?? widget.answerFormat.prefix}' + getTextMessage(locale) +'${locale?.translate(widget.answerFormat.suffix) ?? widget.answerFormat.suffix}',
             style: TextStyle(fontSize: 18),
           ),
           Slider(
@@ -48,4 +48,18 @@ class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
 
   @override
   bool get wantKeepAlive => true;
+
+  String getTextMessage(RPLocalizations locale) {
+    if (widget.answerFormat.options.isEmpty) {
+      if(value != null){
+        return value.toString();
+      } else return widget.answerFormat.minValue.toString();
+    } else {
+      int factor = ((widget.answerFormat.minValue + widget.answerFormat.maxValue) ~/ widget.answerFormat.divisions);
+      double myValue = value ?? widget.answerFormat.minValue;
+      int index = myValue ~/ factor;
+      String text = widget.answerFormat.options[index];
+      return locale?.translate(text) ?? text;
+    }
+  }
 }
