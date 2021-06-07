@@ -55,9 +55,10 @@ class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
         return value.toString();
       } else return widget.answerFormat.minValue.toString();
     } else {
-      int factor = ((widget.answerFormat.minValue + widget.answerFormat.maxValue) ~/ widget.answerFormat.divisions);
+      double factor = ((widget.answerFormat.maxValue - widget.answerFormat.minValue) / widget.answerFormat.divisions);
       double myValue = value ?? widget.answerFormat.minValue;
-      int index = myValue ~/ factor;
+      double minVal = widget.answerFormat.minValue;
+      int index = ((myValue - minVal) / factor).toInt();
       String text = widget.answerFormat.options[index];
       return locale?.translate(text) ?? text;
     }
