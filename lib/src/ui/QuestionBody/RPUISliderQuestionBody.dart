@@ -13,6 +13,7 @@ class RPUISliderQuestionBody extends StatefulWidget {
 class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
     with AutomaticKeepAliveClientMixin<RPUISliderQuestionBody> {
   double value;
+  double startChangeValue;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +39,8 @@ class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
               widget.onResultChange(value);
             },
             onChangeEnd: (double newValue) {
-              if(value == null) {
-                print('Ended change on $newValue');
+              if(value == null && startChangeValue == newValue) {
+                print('Updated unchanged value: $newValue');
                 setState(() {
                   value = newValue;
                 });
@@ -47,7 +48,11 @@ class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
               }
             },
             onChangeStart: (double startValue) {
-              print('Started change at $startValue');
+              if (value == null){
+                setState(() {
+                  startChangeValue = startValue;
+                });
+              }
             },
             min: widget.answerFormat.minValue,
             max: widget.answerFormat.maxValue,
