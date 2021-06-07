@@ -37,6 +37,18 @@ class _RPUISliderQuestionBodyState extends State<RPUISliderQuestionBody>
               });
               widget.onResultChange(value);
             },
+            onChangeEnd: (double newValue) {
+              if(value == null) {
+                print('Ended change on $newValue');
+                setState(() {
+                  value = newValue;
+                });
+                widget.onResultChange(value);
+              }
+            },
+            onChangeStart: (double startValue) {
+              print('Started change at $startValue');
+            },
             min: widget.answerFormat.minValue,
             max: widget.answerFormat.maxValue,
             divisions: widget.answerFormat.divisions,
